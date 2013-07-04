@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#/usr/bin/python
 from fingerprint import FingerPrint
 from infocollector import InfoCollector
 from tester import Tester
@@ -39,22 +39,23 @@ for o,u in opts:
 	elif o in ("-u","--url"):
 		url = fp.adrstrip(u)
 		t = fp.detect_cms(url)
+		#tes = fp.check_if_exist("http://www.123algeriasport.com/wp-content/plugins/social-discussions/")
 		print "[!] CMS installed is : "+t
 		if (t == "wordpress"):
 			print "[x] Searching for plugins or themes in the code (passive search): \n"
 			ic.get_info_passive(url,t)
-			print "[x] Fingerprinting using readme.html \n"
-			print "[!] Wordpress Version is : "+fp.wp_fp_rm(url)+"\n"
-			print "[x] Fingerprinting Using advanced fingerprinting \n"
-			print "[!] Wordpress Version is :"+str(fp.wp_fp(url))+"\n"
-			print "[x] Searching for plugins and Themes using agressive mode: \n"
-			ic.get_info_aggressive(url,"top","plugins")
-			print "\n"
-			ic.get_info_aggressive(url,"top","themes")
-			print "\n"
-			print "[x] Scanning for core Vulns : \n"
-			ts.wp_vulns(fp.wp_fp(url))
-			print "\n"
+			#print "[x] Fingerprinting using readme.html \n"
+			#print "[!] Wordpress Version is : "+fp.wp_fp_rm(url)+"\n"
+			#print "[x] Fingerprinting Using advanced fingerprinting \n"
+			#print "[!] Wordpress Version is :"+str(fp.wp_fp(url))+"\n"
+			#print "[x] Searching for plugins and Themes using agressive mode: \n"
+			#ic.get_info_aggressive(url,"top","plugins")
+			#print "\n"
+			#ic.get_info_aggressive(url,"top","themes")
+			#print "\n"
+			#print "[x] Scanning for core Vulns : \n"
+			#ts.wp_vulns(fp.wp_fp(url))
+			#print "\n"
 			print "[x] Scanning for plugins Vulns :\n"
 			ts.wp_plugins_vulns(url)
 			print "\n"
@@ -63,20 +64,20 @@ for o,u in opts:
 	elif o in ("-t","--type"):
 		type = u
 		if (type == "wordpress"):
-			print "[x] Searching for plugins or themes in the code (passive search): \n"
-			ic.get_info_passive(url,type)
-			print "[x] Fingerprinting using readme.html \n"
-			print "[!] Wordpress Version is : "+fp.wp_fp_rm(url)+"\n"
-			print "[x] Fingerprinting Using advanced fingerprinting \n"
-			print "[!] Wordpress Version is :"+fp.wp_fp(url)+"\n"
-			print "[x] Searching for plugins and Themes using agressive mode: \n"
-			ic.get_info_aggressive(url,"top","plugins")
-			print "\n"
-			ic.get_info_aggressive(url,"top","themes")
-			print "\n"
-			print "[x] Scanning for core Vulns : \n"
-			ts.wp_vulns(fp.wp_fp(url))
-			print "\n"
+			#print "[x] Searching for plugins or themes in the code (passive search): \n"
+			#ic.get_info_passive(url,type)
+			#print "[x] Fingerprinting using readme.html \n"
+			#print "[!] Wordpress Version is : "+fp.wp_fp_rm(url)+"\n"
+			#print "[x] Fingerprinting Using advanced fingerprinting \n"
+			#print "[!] Wordpress Version is :"+str(fp.wp_fp(url))+"\n"
+			#print "[x] Searching for plugins and Themes using agressive mode: \n"
+			#ic.get_info_aggressive(url,"top","plugins")
+			#print "\n"
+			#ic.get_info_aggressive(url,"top","themes")
+			#print "\n"
+			#print "[x] Scanning for core Vulns : \n"
+			#ts.wp_vulns(fp.wp_fp_rm(url))
+			#print "\n"
 			print "[x] Scanning for plugins Vulns :\n"
 			ts.wp_plugins_vulns(url)
 			print "\n"

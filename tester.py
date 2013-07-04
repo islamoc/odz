@@ -45,9 +45,9 @@ class Tester:
 				regex = re.compile('Stable tag: ([\d.]*\d+)')
 				iversion1 = self.fprint.copy(regex.findall(rdm))
 				#print iversion1
-				if (iversion1[0]):
+				try :
 					iversion = iversion1[0]
-				else:
+				except IndexError :
 					iversion = "?"
 				#print iversion
 				s = ele.getchildren()
@@ -55,9 +55,9 @@ class Tester:
 					r = elem.getchildren()
 					version = self.fprint.copy(vregex.findall(r[0].text))
 					#print version
-					if (version[0]):
+					try :
 						v = version[0]
-					else:
+					except IndexError :
 						v = "?"
 					#print v
 					if (len(r) == 3):
