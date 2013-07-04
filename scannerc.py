@@ -67,19 +67,21 @@ for o,u in opts:
 			print "[x] Searching for plugins or themes in the code (passive search): \n"
 			ic.get_info_passive(url,type)
 			print "[x] Fingerprinting using readme.html \n"
+			readmev = fp.wp_fp_rm(url)
 			print "[!] Wordpress Version is : "+fp.wp_fp_rm(url)+"\n"
 			print "[x] Fingerprinting Using advanced fingerprinting \n"
-			print "[!] Wordpress Version is :"+fp.wp_fp(url)+"\n"
+			advv = str(fp.wp_fp(url))
+			print "[!] Wordpress Version is :"+advv+"\n"
 			print "[x] Searching for plugins and Themes using agressive mode: \n"
 			#ic.get_info_aggressive(url,"top","plugins")
 			print "\n"
 			#ic.get_info_aggressive(url,"top","themes")
 			print "\n"
 			print "[x] Scanning for core Vulns : \n"
-			if (fp.wp_fp(url) == "?"):
+			if (fp.wp_fp(url) == "None"):
 				ts.wp_vulns(fp.wp_fp_rm(url))
 			else:
-				ts.wp_vulns(fp.wp_fp(url))
+				ts.wp_vulns(advv)
 			print "\n"
 			print "[x] Scanning for plugins Vulns :\n"
 			ts.wp_plugins_vulns(url)
