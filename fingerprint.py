@@ -138,10 +138,11 @@ class FingerPrint:
 				#print "[!] comparing "+md5c+" hash for "+src+" : "+md5p
 				if (md5c == md5p):
 					r = ele.getchildren()
-					if (r[0].text == None):
+					#print r
+					if r[0].text is None:
 						return "?"
 					else :
-						return r[0].text
+						return str(r[0].text)
 			#print md5
 	def wp_fp_rm(self,url):
 		""" WP fingerprinting detection de version de WP """
