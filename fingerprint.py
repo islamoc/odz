@@ -13,7 +13,7 @@ class FingerPrint:
 		self.fp = 1
 	
 	def detect_cms(self,url):
-		if (self.check_if_exist(url+"/templates/")):
+		if (self.check_if_exist(url+"/components/com_content/")):
 			return "joomla"
 		if (self.check_if_exist(url+"/wp-content/")):
 			return "wordpress"

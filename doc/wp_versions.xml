@@ -11,7 +11,17 @@
 <wp-versions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:noNamespaceSchemaLocation="wp_versions.xsd">
 
-  <file src="wp-includes/js/tiny_mce.js">
+  <file src="wp-includes/js/hoverIntent.js">
+    <hash md5="73e23cc2a686c50a9f80746d5fde8eb5">
+      <version>3.6</version>
+    </hash>
+  </file>
+
+  <file src="wp-includes/js/tinymce/tiny_mce.js">
+    <hash md5="eddb5fda74d41dbdac018167536d8d53">
+      <version>3.5.2</version>
+    </hash>
+    
     <hash md5="6e79ab6d786c5c95920064add33ee599">
       <version>3.5.1</version>
     </hash>
@@ -50,7 +60,7 @@
   </file>
 
 
-  <file src="wp-content/themes/twentyeleven/style.css">
+  <file src="$wp-content$/themes/twentyeleven/style.css">
 
     <!-- same md5 for 3.3.2 -->
     <hash md5="030d3bac906ba69e9fbc99c5bac54a8e">
@@ -91,7 +101,7 @@
   </file>
 
 
-  <file src="wp-content/themes/twentyten/style.css">
+  <file src="$wp-content$/themes/twentyten/style.css">
 
     <hash md5="6211e2ac1463bf99e98f28ab63e47c54">
       <version>3.0</version>
@@ -100,7 +110,7 @@
   </file>
 
 
-  <file src="wp-plugins/akismet/readme.txt">
+  <file src="$wp-plugins$/akismet/readme.txt">
 
     <hash md5="4d5e52da417aa0101054bd41e6243389">
       <version>2.8.6</version>
@@ -171,7 +181,7 @@
   </file>
 
 
-  <file src="wp-content/themes/default/style.css">
+  <file src="$wp-content$/themes/default/style.css">
 
     <hash md5="e44545f529a54de88209ce588676231c">
       <version>2.0.1</version>
