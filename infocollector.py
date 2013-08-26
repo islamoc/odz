@@ -71,7 +71,7 @@ class InfoCollector:
 						content = self.fprint.get_cont(url+"/wp-content/plugins/"+elem+"/"+"readme.txt")
 						regex = re.compile('Stable tag: (.+)')
 						version = regex.findall(content)
-						if (version[0]):
+						if (len(version)!=0):
 							print "[!] Found "+elem+" Version "+version[0]
 						else:
 							print "[!] Found "+elem+" Version ?"
@@ -86,7 +86,7 @@ class InfoCollector:
 						content = self.fprint.get_cont(url+"/wp-content/plugins/"+elem+"/"+"readme.txt")
 						regex = re.compile('Stable tag: (.+)')
 						version = regex.findall(content)
-						if (version[0]):
+						if (len(version)!=0):
 							print "[!] Found "+elem+" Version "+version[0]
 						else:
 							print "[!] Found "+elem+" Version ?"
