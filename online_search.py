@@ -10,12 +10,12 @@ from fingerprint import FingerPrint
 
 
 class OnlineSearch:
-	""" la classe de recherche enligne des failles """
+	""" Online search for vulns """
 	def __init__(self):
 		self.fprint = FingerPrint()
 	
 	def site_search(self,com):
-		"""recherche des informatation sur les composants sur packetstorm.org"""
+		"""search on packetstorm.org"""
 		sere = self.fprint.get_cont("http://packetstormsecurity.org/search/files/?q="+com+"&s=files")
 		if (re.search(r"No Results Found",sere)):
 			print "No Results Found in packetstormsecurity.org"
@@ -28,3 +28,5 @@ class OnlineSearch:
 				print "Title : "+elem[2]
 				print "\n"
 				print "---------------------------------------------------------"
+	def exploit_db_search(self,keyword):
+		#Todo
