@@ -13,7 +13,7 @@ class InfoCollector:
 		self.fprint = FingerPrint()
 	
 	def get_admin(self,url):
-		""" Brute Force du lien de linterface d'administration """
+		""" Brute Force the admin link """
 		f = open("doc/admin.txt")
 		cont = f.read()
 		list = cont.split("\n")
@@ -22,7 +22,7 @@ class InfoCollector:
 				print "[!] Found this directory "+elem+"\n"
 				
 	def get_info_passive(self,url,type):
-		""" enumeration des templates , plugins et conposants a base de contenue de page """
+		""" Passive templates and Plugins enumeration """
 		if (type == "joomla"):
 			content = self.fprint.get_cont(self,url)
 			linex1 = re.compile("option,(.*?)/")
@@ -57,7 +57,7 @@ class InfoCollector:
 				print elem
 			
 	def get_info_aggressive(self,url,mode,item):
-		""" Enumeration de plugins et theme a base d'un list """
+		""" Agressive Templates and PLugins enumeration """
 		if (item == "plugins"):
 			if (mode == "full"):
 				print "[!] Enumerating All installed Plugins in "+url+"\n"
