@@ -5,7 +5,7 @@
 # This Tool is published Under the GNU public license (for more information license.txt)
 # OnlineSearch Class :
 
-import re,urllib2,mechanize,xml.etree.ElementTree
+import re,urllib2,mechanize,xml.etree.ElementTree,shodan
 from fingerprint import FingerPrint
 
 
@@ -30,3 +30,4 @@ class OnlineSearch:
 				print "---------------------------------------------------------"
 	def exploit_db_search(self,keyword):
 		#Todo
+		
