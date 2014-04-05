@@ -4,7 +4,11 @@
 # Author : Mennouchi Islam Azeddine azeddine.mennouchi@owasp.org
 # This Tool is published Under the GNU public license (for more information license.txt)
 # FingerPrint Class :
-import re,urllib2,mechanize,md5,xml.etree.ElementTree
+import re
+import urllib2
+import mechanize
+import md5
+import xml.etree.ElementTree
 
 class FingerPrint:
 
@@ -100,7 +104,7 @@ class FingerPrint:
 			response = mechanize.urlopen(request)
 			head = response.info()
 			redi = head["Location"]
-		if other_redi = self.redirection(redi):
+		if other_redi == self.redirection(redi):
 			redi = other_redi
 		return redi
 
