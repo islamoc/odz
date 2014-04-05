@@ -92,9 +92,10 @@ class FingerPrint:
 		content = self.get_cont(url)
 		hash4 = md5.new(content).hexdigest()
 		return hash4
+
 	def redirection(self,url):
 		code = self.res_code(url)
-		if code = 301 or code = 302:
+		if code == 301 or code == 302:
 			request = mechanize.Request(url)
 			response = mechanize.urlopen(request)
 			head = response.info()
@@ -102,7 +103,6 @@ class FingerPrint:
 		if other_redi = self.redirection(redi):
 			redi = other_redi
 		return redi
-		
 
 	def joomla_fp(self,url):
 		""" Joomla Fingerprinting detection de version de joomla """
