@@ -82,7 +82,7 @@ class FingerPrint:
 		content = self.get_cont(url+"/"+rand_s)
 		hash4 = md5.new(content).hexdigest()
 		return hash4
-	def pas_hash(self,url):
+	def page_hash(self,url):
 		content = self.get_cont(url)
 		hash4 = md5.new(content).hexdigest()
 		return hash4
