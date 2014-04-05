@@ -77,6 +77,15 @@ class FingerPrint:
 		except urllib2.HTTPError, error:
 			res = error.read()
 			return res
+	def get_404_hash(self,url):
+		rand_str = "lol_lol"*5
+		content = self.get_cont(url+"/"+rand_s)
+		hash4 = md5.new(content).hexdigest()
+		return hash4
+	def pas_hash(self,url):
+		content = self.get_cont(url)
+		hash4 = md5.new(content).hexdigest()
+		return hash4
 
 	def joomla_fp(self,url):
 		""" Joomla Fingerprinting detection de version de joomla """
