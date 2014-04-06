@@ -81,7 +81,8 @@ class FingerPrint:
 		$_page = self.page_hash(url)
 		if ($_page == $_404):
 			return True
-		else return False
+		else:
+			return False
 
 	def get_cont(self,url):
 		"""recuperer le contenue d'une page ou un fichier dans le serveur"""
