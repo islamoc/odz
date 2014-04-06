@@ -112,7 +112,7 @@ class FingerPrint:
 			redi = head["Location"]
 		if self.redirection(redi) != "":
 			redi = self.redirection(redi)
-		return redi
+		print redi
 
 	def joomla_fp(self,url):
 		""" Joomla Fingerprinting detection de version de joomla """
