@@ -55,9 +55,9 @@ class FingerPrint:
 		return new
 		
 	def res_code(self,url):
-		request = mechanize.Request(url)
-		opener = mechanize.build_opener(redirect.SmartRedirectHandler())
-		response = opener.open(request)
+		request = urllib2.Request(url)
+		opener = urllib2.build_opener(redirect.NoRedirectHandler())
+		response = opener.open(url)
 		code = response.code
 		return code
 			
