@@ -104,8 +104,8 @@ class FingerPrint:
 			response = mechanize.urlopen(request)
 			head = response.info()
 			redi = head["Location"]
-		if other_redi == self.redirection(redi):
-			redi = other_redi
+		if self.redirection(redi) != "":
+			redi = self.redirection(redi)
 		return redi
 
 	def joomla_fp(self,url):
