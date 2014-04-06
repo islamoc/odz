@@ -9,6 +9,7 @@ import urllib2
 import mechanize
 import md5
 import xml.etree.ElementTree
+import redirect
 
 class FingerPrint:
 
@@ -55,7 +56,8 @@ class FingerPrint:
 		
 	def res_code(self,url):
 		request = mechanize.Request(url)
-		response = mechanize.urlopen(request)
+		opener = mechanize.build_opener(redirect.SmartRedirectHandler())
+		response = opener.open(request)
 		code = response.code
 		return code
 			
