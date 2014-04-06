@@ -77,9 +77,9 @@ class FingerPrint:
 				return False
 			else:
 				return True
-		$_404 = self.get_404_hash(url)
-		$_page = self.page_hash(url)
-		if ($_page == $_404):
+		_404 = self.get_404_hash(url)
+		_page = self.page_hash(url)
+		if (_page == _404):
 			return True
 		else:
 			return False
@@ -104,16 +104,18 @@ class FingerPrint:
 		hash4 = md5.new(content).hexdigest()
 		return hash4
 
-	def redirection(self,url):
+	def redirection(self, url):
 		code = self.res_code(url)
+		print "url==> %s, code ==> %d" % (url, code)
 		if code == 301 or code == 302:
 			request = mechanize.Request(url)
 			response = mechanize.urlopen(request)
 			head = response.info()
-			redi = head["Location"]
-		if self.redirection(redi) != "":
-			redi = self.redirection(redi)
-		print redi
+			redi = head["location"]
+			if redi:
+				return self.redirection(redi)
+				
+		return code
 
 	def joomla_fp(self,url):
 		""" Joomla Fingerprinting detection de version de joomla """
