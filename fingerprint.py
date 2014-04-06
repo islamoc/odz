@@ -65,6 +65,7 @@ class FingerPrint:
 		""" verefier si un lien existe """
 		request = mechanize.Request(url)
 		BAD_REQ = [400,401,404]
+		res = ""
 		try :
 			response = mechanize.urlopen(request)
 			if response.code in BAD_REQ:
@@ -76,6 +77,11 @@ class FingerPrint:
 				return False
 			else:
 				return True
+		$_404 = self.get_404_hash(url)
+		$_page = self.page_hash(url)
+		if ($_page == $_404):
+			return True
+		else return False
 
 	def get_cont(self,url):
 		"""recuperer le contenue d'une page ou un fichier dans le serveur"""
