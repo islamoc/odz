@@ -107,11 +107,10 @@ class FingerPrint:
 	def redirection(self, url):
 		code = self.res_code(url)
 		print "url==> %s, code ==> %d" % (url, code)
-		if code == 301 or code == 302 or code == 200:
+		if code == 301 or code == 302:
 			request = mechanize.Request(url)
 			response = mechanize.urlopen(request)
 			head = response.info()
-			print head
 			redi = head["location"]
 			if redi:
 				return self.redirection(redi)
