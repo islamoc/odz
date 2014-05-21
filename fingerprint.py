@@ -35,21 +35,18 @@ class FingerPrint:
 
 	def exist(self,list,a):
 		""" verifier si un element existe dans une list """
-		i = 0
-		for elem in list:
-			if (elem == a):
-				i=i+1
-		if (i>0):
-			return True
-		else:
-			return False
+		try:
+			if type(list.index(elem)) is int: 
+				return True
+		except ValueError:
+				return False
 
 	def copy(self,list):
 		"""Generer une list qui contient pas un element plus d'une fois"""
 		new = []
 		i = 0
 		while i<len(list):
-			if (self.exist(new,list[i]) == False):
+			if (not self.exist(new,list[i])):
 				new.append(list[i])
 			i=i+1
 		return new
@@ -63,8 +60,8 @@ class FingerPrint:
 			
 
 	def check_if_exist(self,url):
-		"""verefier si un chemin ou un fichier existe dans le serveur"""
-		""" verefier si un lien existe """
+		"""verifier si un chemin ou un fichier existe dans le serveur"""
+		""" verifier si un lien existe """
 		request = mechanize.Request(url)
 		BAD_REQ = [400,401,404]
 		res = ""
