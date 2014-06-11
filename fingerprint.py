@@ -36,10 +36,9 @@ class FingerPrint:
 	def exist(self,list,a):
 		""" verifier si un element existe dans une list """
 		try:
-			if type(list.index(elem)) is int: 
-				return True
+			return isinstance(list.index(a), int)
 		except ValueError:
-				return False
+			return False
 
 	def copy(self,list):
 		"""Generer une list qui contient pas un element plus d'une fois"""
